@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {  
     private Rigidbody2D rb2d;
-    private BoxCollider2D coll; //cuộn dây
+    private CapsuleCollider2D coll; //cuộn dây
     public PlayerAnimation playerAnimation;
     [SerializeField] private float directionX=0f; //phương hướng
     [SerializeField] private float speedMove = 3f;
@@ -15,9 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove=true;
     private void Start()
     {
-        this.playerAnimation = GetComponent<PlayerAnimation>();
         this.rb2d = GetComponent<Rigidbody2D>();
-        this.coll= GetComponent<BoxCollider2D>();
+        this.coll= GetComponent<CapsuleCollider2D>();
     }
     private void Update()
     {
